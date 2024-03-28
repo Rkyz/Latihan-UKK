@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -40,17 +41,17 @@ Route::middleware('auth')->group(function () {
     Route::post('/user/create', [UserController::class, 'store'])->name('register')->middleware('admin');
     Route::delete('/user/{id}', [UserController::class, 'destroy']);
     Route::put('/user/{id}', [UserController::class, 'edit']);
+    
 
-    // Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/product', function () {
-        return Inertia::render('Product/Main');
-    })->name('product');
-    Route::get('/menu', function () {
-        return Inertia::render('Menus/Menu');
-    })->name('dashboard');
-    Route::get('/menu/food', function () {
-        return Inertia::render('Menus/Food');
-    })->name('dashboard');
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/product/{id}', [ProductController::class, 'edit'])->name('product.edit');
+    Route::patch('/product/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::put('/product/stok/{id}', [ProductController::class, 'updateStok'])->name('product.updateStok');
+
+    Route::get('/menus', [CategoryController::class, 'index'])->name('category.index');
+    Route::post('/menus/category', [CategoryController::class, 'store'])->name('category.store')->middleware('admin');
 
 
 });

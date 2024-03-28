@@ -56,9 +56,11 @@ const MainLayout = ({children}) => {
           )}
           </div>
         </div>
-      <button onClick={handleForm} className={`fixed shadow-lg right-[30px] max-sm:hidden sm:bottom-[30px] bg-red-500 p-[15px] text-[20px] text-white rounded-md ${form || openCart ? 'z-[45] hidden':'z-[50]'} `}>
-      <AiOutlinePlus/>
-    </button>
+        {url === '/user' | url === '/product' && (
+          <button onClick={handleForm} className={`fixed shadow-lg right-[30px] max-sm:hidden sm:bottom-[30px] bg-red-500 p-[15px] text-[20px] text-white rounded-md ${form || openCart ? 'z-[45] hidden':'z-[50]'} `}>
+          <AiOutlinePlus/>
+        </button>
+        )}
       </div>
     </div>
   )

@@ -57,9 +57,9 @@ const Side = ({children, side, className, auth, form}) => {
                                     </Link>
                                 </li>
                                 <li className='relative'>
-                                    <Link href="/menu" className={`flex items-center gap-[10px] px-[20px] max-sm:p-[15px] max-sm:text-[18px] max-sm:rounded-md  ${url === '/menu' | url === '/menu/food' && 'sm:bg-transparent max-sm:bg-red-500 max-sm:before:hidden  before:bg-red-500 before:h-full before:w-[5px] before:absolute before:left-0'} ${side ? 'max-md:justify-center':'md:justify-center max-sm:justify-center'}  `}>
-                                        <MdOutlineRestaurantMenu className={`${url === '/menu' ? 'text-[#D68285] max-sm:text-white':'text-gray-400'}`}/>
-                                        <p className={`capitalize font-medium max-sm:hidden text-gray-400 text-[15px] ${url === '/menu' ? 'text-gray-500':'text-gray-400'} ${side ? 'max-md:hidden':'md:hidden'}`}>menu</p>
+                                    <Link href="/menus" className={`flex items-center gap-[10px] px-[20px] max-sm:p-[15px] max-sm:text-[18px] max-sm:rounded-md  ${url === '/menus' | url === '/menus/food' && 'sm:bg-transparent max-sm:bg-red-500 max-sm:before:hidden  before:bg-red-500 before:h-full before:w-[5px] before:absolute before:left-0'} ${side ? 'max-md:justify-center':'md:justify-center max-sm:justify-center'}  `}>
+                                        <MdOutlineRestaurantMenu className={`${url === '/menus' ? 'text-[#D68285] max-sm:text-white':'text-gray-400'}`}/>
+                                        <p className={`capitalize font-medium max-sm:hidden text-gray-400 text-[15px] ${url === '/menus' ? 'text-gray-500':'text-gray-400'} ${side ? 'max-md:hidden':'md:hidden'}`}>menu</p>
                                     </Link>
                                 </li>
                                 <li className='relative'>

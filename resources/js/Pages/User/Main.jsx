@@ -77,6 +77,7 @@ const Main = ({users, auth}) => {
         setEditedUser(null);
     };
 
+
     return (
         <MainLayout >
             <Head title="Dashboard"/>
